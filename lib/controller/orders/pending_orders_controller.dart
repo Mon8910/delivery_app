@@ -1,4 +1,5 @@
 
+import 'package:delivery_apps/controller/orders/tracking_order_controller.dart';
 import 'package:delivery_apps/core/class/statusrequest.dart';
 import 'package:delivery_apps/core/constant/app_routes.dart';
 import 'package:delivery_apps/core/function/handling_data.dart';
@@ -68,6 +69,7 @@ class PendingOrdersController extends GetxController {
     print('==========$response');
     statusRequest = handlingData(response);
     if (response['status'] == 'success') {
+      //TrackingOrderController trackingOrderController= Get.put(TrackingOrderController());
       Get.offAllNamed(AppRoutes.home);
       Get.snackbar('success', 'The order was successfully');
     } else {

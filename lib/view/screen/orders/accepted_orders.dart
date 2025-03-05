@@ -1,6 +1,6 @@
 import 'package:delivery_apps/controller/orders/accepted_orders_controller.dart';
 import 'package:delivery_apps/core/class/handling_data_view.dart';
-import 'package:delivery_apps/view/widgets/orders/pending_orders_items.dart';
+import 'package:delivery_apps/view/widgets/orders/done_order.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +21,7 @@ class AcceptedOrders extends StatelessWidget {
                   statusRequest: controller.statusRequest,
                   widget: ListView.builder(
                     itemCount: controller.data.length,
-                    itemBuilder: (context, index) => PendingOrdersItems(
+                    itemBuilder: (context, index) => DoneOrder(
                       ordersModel: controller.data[index],
                     ),
                   ),

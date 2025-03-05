@@ -2,6 +2,8 @@
 import 'package:delivery_apps/controller/orders/order_details_controller.dart';
 import 'package:delivery_apps/core/class/handling_data_view.dart';
 import 'package:delivery_apps/core/constant/app_color.dart';
+import 'package:delivery_apps/core/constant/app_routes.dart';
+import 'package:delivery_apps/core/shared/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -123,7 +125,15 @@ class OrderDetails extends StatelessWidget {
                               },
                             ),
                           ),
-                        )
+                        ),
+                      const SizedBox(height: 20,),
+                      if(controller.ordersModel.ordersType==0 && controller.ordersModel.ordersStatus==3)
+                      CustomButton(title: 'Tracking', onPressed: (){
+                        Get.toNamed(AppRoutes.tracking,arguments: {
+                          "orderdetails":controller.ordersModel
+
+                        });
+                      })
                       ],
                     ),
                   ))),

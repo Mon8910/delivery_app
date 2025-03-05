@@ -57,6 +57,22 @@ class AcceptedOrdersController extends GetxController {
     }
     update();
   }
+  doneData(userid,orderid) async {
+    data.clear();
+    statusRequest = StatusRequest.loading;
+    var response = await acceptedOrdersData
+        .doneOrderData(userid,orderid);
+    print('==========$response');
+    statusRequest = handlingData(response);
+    if (response['status'] == 'success') {
+      getData();
+      
+      // data.addAll(response['data']);
+    } else {
+      statusRequest = StatusRequest.failure;
+    }
+    update();
+  }
 
   
 

@@ -46,6 +46,8 @@ class AppLink {
     static const String acceptedOrders = '$baseUrl/ordersdelivery/accepted.php';
 
   static const String approveOrders = '$baseUrl/ordersdelivery/approve.php';
+  static const String doneDelivery = '$baseUrl/ordersdelivery/done.php';
+ 
 
 
 }

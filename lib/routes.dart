@@ -9,6 +9,7 @@ import 'package:delivery_apps/view/screen/home_screen.dart';
 import 'package:delivery_apps/view/screen/orders/archive_order.dart';
 import 'package:delivery_apps/view/screen/orders/order_details.dart';
 import 'package:delivery_apps/view/screen/orders/pending_order.dart';
+import 'package:delivery_apps/view/screen/orders/tracking_view.dart';
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>>? routes = [
@@ -40,6 +41,10 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.home,
     page: () => const HomeScreen(),
+  ),
+ GetPage(
+    name: AppRoutes.tracking,
+    page: () => const TrackingView(),
   ),
  
  
